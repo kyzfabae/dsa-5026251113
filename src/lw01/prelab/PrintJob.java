@@ -1,6 +1,3 @@
-
-import Week4.Chargeable.Chargeable;
-
 public abstract class PrintJob implements Chargeable {
     private String id;
     private int pages;

@@ -13,7 +13,7 @@ public class Main {
             String type = scanner.next();
             String id = scanner.next();
             int pages = scanner.nextInt();
-
+            
             if (type.equals("MONO")) {
                 jobs.add(new MonoPrint(id, pages));
             } else if (type.equals("COLOUR")) {

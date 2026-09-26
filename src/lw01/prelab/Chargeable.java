@@ -1,5 +1,4 @@
-
-    public interface Chargeable {
+public interface Chargeable {
     int calculateCharge();
 }
 
