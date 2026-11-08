@@ -1,17 +1,27 @@
 package lw02.prelab;
 
-import java.io.File;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
+// Main Class getResourceAsStream()
+// Array store tiap data
+// Raisa di 1 dan 3 harus jadi as a 1 customer
+// initial balance 0
+
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        // 1. Read and store all transactions
+        // Read transaction
         LinkedList<String[]> transactions = new LinkedList<>();
-        Scanner scanner = new Scanner(new File("transactions.txt"));
+        LinkedList<String[]> customers = new LinkedList<>();
+        Queue<String[]> queue = new LinkedList<>();
+        Stack<String[]> failedTransactions = new Stack<>();
+        Scanner scanner = new Scanner(Main.class.geResourceAsStream("transactions.txt"));
+
+
+
         while (scanner.hasNext()) {
             String name = scanner.next();
             String type = scanner.next();
@@ -21,7 +31,7 @@ public class Main {
         scanner.close();
 
         // 2. Build customer list (first-appearance order, balance starts at 0)
-        LinkedList<String[]> customers = new LinkedList<>();
+        
         for (String[] tx : transactions) {
             String name = tx[0];
             boolean found = false;
@@ -37,13 +47,13 @@ public class Main {
         }
 
         // 3. Move transactions into a Queue (FIFO)
-        Queue<String[]> queue = new LinkedList<>();
+        
         for (String[] tx : transactions) {
             queue.offer(tx);
         }
 
         // 4. Stack for failed withdrawals
-        Stack<String[]> failedTransactions = new Stack<>();
+        
 
         // 5. Process the queue in FIFO order
         while (!queue.isEmpty()) {
