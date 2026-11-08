@@ -51,7 +51,7 @@ public class Main {
                 a[j + 1] = a[j];
                 j--;
             }
-            a[j + 1] = keys;
+            a[j + 1] = key;
         }
     }
 
