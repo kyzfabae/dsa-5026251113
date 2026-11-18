@@ -7,7 +7,8 @@ public class Main {
     static String[] names;
 
     // Adds a two-way walkway (complete, do not change)
-    static void addEdge(int from, int to, int minutes) {
+    static void addEdge(int from, int to,
+         int minutes) {
         graph[from][to] = minutes;
         graph[to][from] = minutes;
     }
