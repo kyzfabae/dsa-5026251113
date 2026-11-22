@@ -172,7 +172,7 @@ public class Main {
                 + " | Time: " + pathTime(path) + " min");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[]) {
         Scanner scanner = new Scanner(Main.class.getResourceAsStream("metro1.txt"));
 
         size = scanner.nextInt();
@@ -210,6 +210,10 @@ public class Main {
 
         // 4. Comparison
         boolean same = true;
+
+        boolean same = fewestPath.size();
+
+
         if (fewestPath.size() != fastestPath.size()) {
             same = false;
         } else {
@@ -220,7 +224,15 @@ public class Main {
             }
         }
 
-        System.out.println("=== Comparison ===");
+        System.out.println("=== Comparison ===");   
+        if (!same){
+           int a = (fastestPath.size()-1) - (fewestPath.size() - 1);   
+           int b = pathTime(5);
+           double node = findTheNextNode();
+        };
+
+
+
         if (same) {
             System.out.println("Both routes are the same.");
         } else {
